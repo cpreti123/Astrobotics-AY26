@@ -1,0 +1,54 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/alexander/nav2_ws/install/nav2_smoother/include/**",
+        "/home/alexander/nav2_ws/install/nav2_controller/include/**",
+        "/home/alexander/nav2_ws/install/dwb_plugins/include/**",
+        "/home/alexander/nav2_ws/install/dwb_critics/include/**",
+        "/home/alexander/nav2_ws/install/dwb_core/include/**",
+        "/home/alexander/nav2_ws/install/nav_2d_utils/include/**",
+        "/home/alexander/nav2_ws/install/dwb_msgs/include/**",
+        "/home/alexander/nav2_ws/install/nav_2d_msgs/include/**",
+        "/home/alexander/nav2_ws/install/nav2_waypoint_follower/include/**",
+        "/home/alexander/nav2_ws/install/nav2_theta_star_planner/include/**",
+        "/home/alexander/nav2_ws/install/nav2_smac_planner/include/**",
+        "/home/alexander/nav2_ws/install/nav2_rotation_shim_controller/include/**",
+        "/home/alexander/nav2_ws/install/nav2_regulated_pure_pursuit_controller/include/**",
+        "/home/alexander/nav2_ws/install/nav2_planner/include/**",
+        "/home/alexander/nav2_ws/install/nav2_navfn_planner/include/**",
+        "/home/alexander/nav2_ws/install/nav2_mppi_controller/include/**",
+        "/home/alexander/nav2_ws/install/nav2_constrained_smoother/include/**",
+        "/home/alexander/nav2_ws/install/nav2_bt_navigator/include/**",
+        "/home/alexander/nav2_ws/install/nav2_behaviors/include/**",
+        "/home/alexander/nav2_ws/install/nav2_core/include/**",
+        "/home/alexander/nav2_ws/install/nav2_collision_monitor/include/**",
+        "/home/alexander/nav2_ws/install/costmap_queue/include/**",
+        "/home/alexander/nav2_ws/install/nav2_costmap_2d/include/**",
+        "/home/alexander/nav2_ws/install/nav2_voxel_grid/include/**",
+        "/home/alexander/nav2_ws/install/nav2_velocity_smoother/include/**",
+        "/home/alexander/nav2_ws/install/nav2_rviz_plugins/include/**",
+        "/home/alexander/nav2_ws/install/nav2_map_server/include/**",
+        "/home/alexander/nav2_ws/install/nav2_lifecycle_manager/include/**",
+        "/home/alexander/nav2_ws/install/nav2_behavior_tree/include/**",
+        "/home/alexander/nav2_ws/install/nav2_amcl/include/**",
+        "/home/alexander/nav2_ws/install/nav2_util/include/**",
+        "/home/alexander/nav2_ws/install/nav2_msgs/include/**",
+        "/home/alexander/dev_ws/install/turtlesim/include/**",
+        "/opt/ros/jazzy/include/**",
+        "/home/alexander/ros2_ws/src/cpp_control_pkg/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

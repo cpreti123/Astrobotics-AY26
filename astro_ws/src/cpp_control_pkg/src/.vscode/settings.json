@@ -1,0 +1,26 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/alexander/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/realsense_compressed/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/dwb_msgs/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav_2d_msgs/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav2_simple_commander/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav2_msgs/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav2_common/lib/python3.10/site-packages",
+        "/home/alexander/dev_ws/install/turtlesim/lib/python3.10/site-packages",
+        "/home/alexander/dev_ws/install/my_package/lib/python3.10/site-packages",
+        "/opt/ros/jazzy/lib/python3.10/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/alexander/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/realsense_compressed/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/dwb_msgs/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav_2d_msgs/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav2_simple_commander/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav2_msgs/lib/python3.10/site-packages",
+        "/home/alexander/nav2_ws/install/nav2_common/lib/python3.10/site-packages",
+        "/home/alexander/dev_ws/install/turtlesim/lib/python3.10/site-packages",
+        "/home/alexander/dev_ws/install/my_package/lib/python3.10/site-packages",
+        "/opt/ros/jazzy/lib/python3.10/site-packages"
+    ]
+}
