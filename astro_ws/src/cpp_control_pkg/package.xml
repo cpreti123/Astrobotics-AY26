@@ -13,7 +13,7 @@
   <depend>geometry_msgs</depend>
   <depend>rcutils</depend>
   <depend>nlohmann-json3-dev</depend>  <!-- OS package providing nlohmann_json -->
-
+  <depend>sensor_msgs</depend>
 
   <export>
     <build_type>ament_cmake</build_type>

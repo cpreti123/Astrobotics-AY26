@@ -1,0 +1,13 @@
+###To see the working components of the controller (especially with rqt and terminator to have all the components work at the same time), 
+###build the controller node and run the local publisher after also running ROS2's joy node. Then, echo the following in separate terminals:
+
+ros2 topic echo /cmd_vel
+
+# See button arrays
+ros2 topic echo /btn_array
+
+# See D-pad arrays
+ros2 topic echo /dpad_array
+
+
+###They'll show you the components of the controller when it is plugged in!

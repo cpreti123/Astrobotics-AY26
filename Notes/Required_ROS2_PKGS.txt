@@ -1,0 +1,3 @@
+#for joystick recognition
+sudo apt install ros-jazzy-joy-linux
+
