@@ -59,6 +59,25 @@ Turtlebot3MotorDriver::~Turtlebot3MotorDriver()
 //     dxl.setGoalPWM(DXL_ID_RIGHT, r); // Set right motor PWM
 // }
 
+bool set_velocity_mode()
+{
+  bool ret = false;
+
+  // Operating Mode (addr 11), value 1 = Velocity Control
+  uint8_t velocity_mode = 1;
+
+  sync_write_param.addr = 11;
+  sync_write_param.length = 1;
+  sync_write_param.xel[LEFT].data[0] = velocity_mode;
+  sync_write_param.xel[RIGHT].data[0] = velocity_mode;
+
+  if (dxl.syncWrite(sync_write_param)) {
+    ret = true;
+  }
+
+  return ret;
+}
+
 bool Turtlebot3MotorDriver::set_torque(bool onoff)
 {
   bool ret = false;
@@ -86,13 +105,16 @@ bool write_velocity(int32_t left_value, int32_t right_value)
 {
   bool ret = false;
 
-  sync_write_param.addr = 104;
+  sync_write_param.addr = 104;  // Goal Velocity
   sync_write_param.length = 4;
-  memcpy(sync_write_param.xel[LEFT].data, &left_value, sync_write_param.length);
-  memcpy(sync_write_param.xel[RIGHT].data, &right_value, sync_write_param.length);
 
-  if(dxl.syncWrite(sync_write_param)){
+  memcpy(sync_write_param.xel[LEFT].data,  &left_value,  4);
+  memcpy(sync_write_param.xel[RIGHT].data, &right_value, 4);
+
+  if (dxl.syncWrite(sync_write_param)) {  // <-- Pass the struct!
     ret = true;
+  } else {
+    Serial.println("SyncWrite failed for Goal Velocity!");
   }
 
   return ret;
@@ -156,14 +178,26 @@ bool Turtlebot3MotorDriver::init(void)
 
   // Enable Dynamixel Torque
   set_torque(true);
+  set_velocity_mode();
 
   return true;
 }
 
 void setup() {
 
+  Serial.begin(115200);
+  while(!Serial); // Wait for serial monitor (optional)
+
   Turtlebot3MotorDriver motorDriver;
-  motorDriver.init();
+  
+  if (motorDriver.init()) {
+    Serial.println("Motor driver initialized successfully!");
+  } else {
+    Serial.println("Motor driver init FAILED!");
+    while(1);
+  }
+
+  delay(1000);
 
   // dxl.setGoalPWM(DXL_ID_LEFT, 1500); // Stop left motor
   // dxl.setGoalPWM(DXL_ID_RIGHT, 1500); // Stop right motor
@@ -188,7 +222,19 @@ void setup() {
 }
 
 void loop() {
-  write_velocity(LIMIT_X_MAX_VELOCITY, LIMIT_X_MAX_VELOCITY);
+  static uint32_t last_time = 0;
+  if (millis() - last_time > 1000) {
+    Serial.println("Commanding full speed forward...");
+    last_time = millis();
+  }
+
+  bool result = write_velocity(LIMIT_X_MAX_VELOCITY, LIMIT_X_MAX_VELOCITY);
+  if (!result) {
+    Serial.println("write_velocity failed!");
+  }
+
+  delay(10);
+
   // rclc_executor_spin_some(&executor, RCL_MS_TO_NS(10)); // Process ROS messages
   // rclc_executor_spin_some(&executor, RCL_MS_TO_NS(10)); // Process ROS messages
 }
